@@ -1,0 +1,89 @@
+/* LoginPage Styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('C:\login\login-app\src\assets\background.png'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .login-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay for better contrast */
+    z-index: 0;
+  }
+  
+  .login-container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .login-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-input:focus {
+    border-color: #007bff;
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .login-links {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .login-links .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-links .link:hover {
+    text-decoration: underline;
+  }
+  

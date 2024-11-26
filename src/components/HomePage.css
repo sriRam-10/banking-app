@@ -1,0 +1,72 @@
+/* HomePage Styles */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('C:\login\login-app\src\assets\background.png'); /* Use correct path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 0 20px; /* Added padding for mobile responsiveness */
+}
+
+.home-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.home-page .home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;  /* Limiting width for readability */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for content */
+  border-radius: 10px; /* Rounded corners for content box */
+}
+
+.home-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home-page p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.home-page .home-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%; /* Makes the button stretch across the screen on mobile */
+}
+
+.home-page .home-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.home-page a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home-page a:hover {
+  text-decoration: underline;
+}

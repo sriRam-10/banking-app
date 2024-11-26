@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const pool = require('../config/db');
@@ -86,5 +86,18 @@ router.post('/forgot-password', (req, res) => {
     });
   });
 });
+
+module.exports = router;*/
+
+
+
+const express = require('express');
+const { register, login, forgotPassword, resetPassword } = require('../controllers/authController');
+const router = express.Router();
+
+router.post('/register', register);
+router.post('/login', login);
+router.post('/forgot-password', forgotPassword);
+router.post('/reset-password', resetPassword);
 
 module.exports = router;
