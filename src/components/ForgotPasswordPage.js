@@ -1,51 +1,40 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ForgotPasswordPage = () => {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const navigate = useNavigate();
+const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
 
-  const handleSendResetLink = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Get stored user data from localStorage
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-
-    if (storedUser && storedUser.email === email) {
-      // Simulate sending reset link
-      setSuccess('A password reset link has been sent to your email.');
-
-      // Redirect to Reset Password page after a delay
-      setTimeout(() => {
-        navigate('/reset-password', { state: { email } });
-      }, 2000);
-    } else {
-      setError('Email not found. Please enter a registered email.');
-    }
+    // Handle password reset logic here
+    alert(`Password reset link sent to ${email}`);
   };
 
   return (
-    <div className="auth-container">
-      <h1>Forgot Password</h1>
-      <form onSubmit={handleSendResetLink}>
-        <input
-          type="email"
-          placeholder="Enter your registered email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button type="submit">Send Reset Link</button>
-      </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>}
-      <p>
-        Back to <a href="/">Login</a>.
-      </p>
+    <div className="container">
+      <div className="overlay"></div>
+      <div className="content">
+        <h1>Forgot Password</h1>
+        <p>Enter your registered email</p>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <input
+            type="email"
+            placeholder="Enter your registered email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="auth-input"
+            required
+          />
+          <button type="submit" className="btn-primary">
+            Send Reset Link
+          </button>
+        </form>
+        <p>
+          Back to <Link to="/login" className="auth-link">Login</Link>.
+        </p>
+      </div>
     </div>
   );
 };
 
-export default ForgotPasswordPage;
+export default ForgotPassword;
